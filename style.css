@@ -3,21 +3,41 @@ body {
   font-family: Arial, sans-serif;
   background: #0f2027;
   color: white;
+  transition: background 0.3s, color 0.3s;
+}
+
+.light-theme {
+  background: #ffffff;
+  color: #000000;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background: #203a43;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a, nav ul li button {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 header {
   text-align: center;
   padding: 4rem 1rem;
-  background: #203a43;
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
-p {
-  font-size: 1.2rem;
-  color: #d0d0d0;
 }
 
 .resume-button {
@@ -32,33 +52,50 @@ p {
 
 .projects, .contact {
   padding: 2rem;
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
 }
 
 .project {
   background: #2c5364;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   padding: 1.5rem;
   border-radius: 10px;
-  opacity: 0;
-  animation: fadeIn 1s ease-out forwards;
-}
-
-.project:nth-child(1) { animation-delay: 0.2s; }
-.project:nth-child(2) { animation-delay: 0.4s; }
-.project:nth-child(3) { animation-delay: 0.6s; }
-
-.contact {
   text-align: center;
 }
 
-.contact a {
-  color: #1db954;
-  text-decoration: none;
+.project img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 1rem;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact input, .contact textarea {
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+
+.contact button {
+  background: #1db954;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
