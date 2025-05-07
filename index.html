@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maneesh Buddha | Portfolio</title>
+  <title>Maneesh Buddha | ML & IoT Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
   <nav>
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><button id="theme-toggle">🌓</button></li>
     </ul>
@@ -20,48 +20,53 @@
 
   <header id="home">
     <h1>Maneesh Buddha</h1>
-    <p>Machine Learning & IoT Developer | Edge AI | Smart Systems</p>
-    <div class="button-container">
-      <a href="resume.pdf" download class="resume-button">📄 Download Resume</a>
-    </div>
+    <p>Machine Learning & IoT Developer | Edge AI | Embedded Systems</p>
+    <a href="resume.pdf" download class="resume-btn">📄 Download Resume</a>
   </header>
 
-  <section id="projects" class="projects">
+  <section id="projects">
     <h2>Projects</h2>
-
     <div class="project" data-aos="fade-up">
-      <img src="assets/switchboard.png" alt="Smart Switchboard"/>
       <h3>AI-Powered Smart Switchboard</h3>
-      <p>IoT system with ML-based automation for real-time device control and energy savings.</p>
+      <p>Built an ML-based IoT system for real-time device automation, achieving ~92% anomaly detection and ~30% energy savings.</p>
     </div>
-
     <div class="project" data-aos="fade-up" data-aos-delay="100">
-      <img src="assets/forecasting.png" alt="Forecasting"/>
-      <h3>Energy Forecasting</h3>
-      <p>Time-series ML model using XGBoost to predict electricity usage.</p>
+      <h3>Real-Time Object Detection</h3>
+      <p>Deployed YOLOv5 + TensorRT on Raspberry Pi for live security alerts via Telegram. Achieved >90% mAP with custom-trained dataset.</p>
     </div>
-
     <div class="project" data-aos="fade-up" data-aos-delay="200">
-      <img src="assets/recommendation.png" alt="Recommendation"/>
-      <h3>Recommendation System</h3>
-      <p>NLP-based content recommender using cosine similarity and TF-IDF.</p>
+      <h3>NLP-Based Recommender</h3>
+      <p>Used TF-IDF + cosine similarity to recommend learning content. Boosted relevance by 40% in A/B tests for ed-tech MVP.</p>
     </div>
   </section>
 
-  <section id="contact" class="contact">
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="experience" data-aos="fade-right">
+      <h3>Research Assistant – CSU Fullerton</h3>
+      <p>Developed edge ML pipelines on Raspberry Pi + ESP8266. Led BRD/FRS documentation and collaborated on internal AI demos.</p>
+    </div>
+    <div class="experience" data-aos="fade-right" data-aos-delay="100">
+      <h3>Freelance Machine Learning Developer</h3>
+      <p>Delivered solutions for retail and education clients. Highlights: 38% improved forecasting accuracy, 70% faster dashboard reports.</p>
+    </div>
+  </section>
+
+  <section id="contact">
     <h2>Contact</h2>
     <form action="https://formspree.io/f/mzbllwdo" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="_replyto" placeholder="Your Email" required>
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="_replyto" placeholder="Your Email" required />
       <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+      <button type="submit">Send</button>
     </form>
   </section>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
-    const toggle = document.getElementById('theme-toggle');
-    toggle.onclick = () => document.body.classList.toggle('light-theme');
+    document.getElementById('theme-toggle').onclick = () =>
+      document.body.classList.toggle('light');
   </script>
 </body>
 </html>
