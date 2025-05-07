@@ -3,78 +3,86 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background: #0f2027;
   color: white;
-  transition: 0.3s;
+  transition: background 0.3s, color 0.3s;
+  scroll-behavior: smooth;
 }
 
-.light {
-  background: #fff;
-  color: #000;
-}
-
-nav {
+.glass-nav {
   position: sticky;
   top: 0;
-  background: #203a43;
+  background: rgba(32, 58, 67, 0.7);
+  backdrop-filter: blur(10px);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
   z-index: 1000;
 }
 
-nav ul {
+.glass-nav .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.glass-nav ul {
   list-style: none;
   display: flex;
   gap: 1.5rem;
-  padding: 1rem;
-  margin: 0;
 }
 
-nav a, nav button {
+.glass-nav a {
   text-decoration: none;
   color: white;
-  background: none;
-  border: none;
   font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
+  transition: 0.3s;
 }
 
-nav a:hover, nav button:hover {
+.glass-nav a:hover {
   color: #1db954;
 }
 
 header {
   text-align: center;
-  padding: 5rem 1rem 3rem;
+  padding: 6rem 1rem 3rem;
   background: #2c5364;
 }
 
 .resume-btn {
-  background: #1db954;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  color: white;
-  text-decoration: none;
-  margin-top: 1rem;
   display: inline-block;
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background: #1db954;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
 }
 
 section {
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
 }
 
 .project, .experience {
   background: #2c5364;
   padding: 1.5rem;
-  border-radius: 10px;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-h2 {
-  margin-bottom: 1.5rem;
-  text-align: center;
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.skill {
+  background: #203a43;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-weight: bold;
 }
 
 form {
@@ -92,27 +100,37 @@ input, textarea {
   border: none;
 }
 
-button[type="submit"] {
+button {
   background: #1db954;
   color: white;
-  padding: 0.75rem;
-  font-size: 1rem;
+  padding: 1rem;
   border: none;
+  font-size: 1rem;
   border-radius: 6px;
   cursor: pointer;
 }
 
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 1.5rem;
+  background: #1db954;
+  padding: 10px;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+}
+
 @media (max-width: 768px) {
-  nav ul {
+  .glass-nav ul {
     flex-direction: column;
-    gap: 0.75rem;
+    align-items: flex-end;
+    gap: 1rem;
   }
 
-  .project, .experience {
-    padding: 1rem;
-  }
-
-  input, textarea, button {
-    font-size: 1rem;
+  .skill {
+    width: 100%;
+    text-align: center;
   }
 }
