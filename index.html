@@ -3,70 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maneesh Buddha | ML & IoT Portfolio</title>
+  <title>Maneesh Buddha | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
-  <nav>
+
+  <nav class="glass-nav">
+    <div class="logo">MB</div>
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><button id="theme-toggle">🌓</button></li>
     </ul>
   </nav>
 
   <header id="home">
     <h1>Maneesh Buddha</h1>
-    <p>Machine Learning & IoT Developer | Edge AI | Embedded Systems</p>
+    <p><span id="typed"></span></p>
     <a href="resume.pdf" download class="resume-btn">📄 Download Resume</a>
   </header>
 
   <section id="projects">
     <h2>Projects</h2>
-    <div class="project" data-aos="fade-up">
-      <h3>AI-Powered Smart Switchboard</h3>
-      <p>Built an ML-based IoT system for real-time device automation, achieving ~92% anomaly detection and ~30% energy savings.</p>
+    <div class="project" data-aos="zoom-in-up">
+      <h3>🧠 AI-Powered Smart Switchboard</h3>
+      <p>IoT system with ML-based automation and ~30% power savings.</p>
     </div>
-    <div class="project" data-aos="fade-up" data-aos-delay="100">
-      <h3>Real-Time Object Detection</h3>
-      <p>Deployed YOLOv5 + TensorRT on Raspberry Pi for live security alerts via Telegram. Achieved >90% mAP with custom-trained dataset.</p>
+    <div class="project" data-aos="zoom-in-up" data-aos-delay="100">
+      <h3>📸 Real-Time Object Detection</h3>
+      <p>Live security feed using YOLOv5 + Raspberry Pi with 90% mAP.</p>
     </div>
-    <div class="project" data-aos="fade-up" data-aos-delay="200">
-      <h3>NLP-Based Recommender</h3>
-      <p>Used TF-IDF + cosine similarity to recommend learning content. Boosted relevance by 40% in A/B tests for ed-tech MVP.</p>
+    <div class="project" data-aos="zoom-in-up" data-aos-delay="200">
+      <h3>📚 NLP Recommendation System</h3>
+      <p>TF-IDF engine boosting content relevance for learners by 40%.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">Python</div>
+      <div class="skill">TensorFlow</div>
+      <div class="skill">Scikit-learn</div>
+      <div class="skill">MQTT</div>
+      <div class="skill">Power BI</div>
+      <div class="skill">Edge AI</div>
     </div>
   </section>
 
   <section id="experience">
     <h2>Experience</h2>
-    <div class="experience" data-aos="fade-right">
-      <h3>Research Assistant – CSU Fullerton</h3>
-      <p>Developed edge ML pipelines on Raspberry Pi + ESP8266. Led BRD/FRS documentation and collaborated on internal AI demos.</p>
+    <div class="experience" data-aos="fade-up">
+      <h3>🔬 Research Assistant – CSU Fullerton</h3>
+      <p>Edge ML, sensor integration, and smart automation pipelines.</p>
     </div>
-    <div class="experience" data-aos="fade-right" data-aos-delay="100">
-      <h3>Freelance Machine Learning Developer</h3>
-      <p>Delivered solutions for retail and education clients. Highlights: 38% improved forecasting accuracy, 70% faster dashboard reports.</p>
+    <div class="experience" data-aos="fade-up" data-aos-delay="100">
+      <h3>🧑‍💻 Freelance ML Developer</h3>
+      <p>38% more accurate forecasting, 70% faster BI dashboards.</p>
     </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
     <form action="https://formspree.io/f/mzbllwdo" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="_replyto" placeholder="Your Email" required />
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="_replyto" placeholder="Your Email" required>
       <textarea name="message" placeholder="Your Message" required></textarea>
       <button type="submit">Send</button>
     </form>
   </section>
 
+  <a href="#home" class="back-to-top">🔝</a>
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
-    document.getElementById('theme-toggle').onclick = () =>
-      document.body.classList.toggle('light');
+    new Typed("#typed", {
+      strings: [
+        "Machine Learning & IoT Developer",
+        "Edge AI Researcher",
+        "Smart System Architect",
+        "Full-stack Innovator"
+      ],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true
+    });
   </script>
 </body>
 </html>
