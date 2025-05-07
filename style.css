@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f2027;
+    color: white;
+  }
+  
+  header {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: #203a43;
+  }
+  
+  .projects {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .project {
+    background: #2c5364;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .project:hover {
+    transform: translateY(-5px);
+  }
+  
