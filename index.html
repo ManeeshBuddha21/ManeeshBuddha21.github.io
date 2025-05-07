@@ -5,9 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maneesh Buddha | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
-  <header>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><button id="theme-toggle">🌓</button></li>
+    </ul>
+  </nav>
+
+  <header id="home">
     <h1>Maneesh Buddha</h1>
     <p>Machine Learning & IoT Developer | Edge AI | Smart Systems</p>
     <div class="button-container">
@@ -15,29 +26,42 @@
     </div>
   </header>
 
-  <section class="projects">
+  <section id="projects" class="projects">
     <h2>Projects</h2>
 
-    <div class="project">
+    <div class="project" data-aos="fade-up">
+      <img src="assets/switchboard.png" alt="Smart Switchboard"/>
       <h3>AI-Powered Smart Switchboard</h3>
       <p>IoT system with ML-based automation for real-time device control and energy savings.</p>
     </div>
 
-    <div class="project">
+    <div class="project" data-aos="fade-up" data-aos-delay="100">
+      <img src="assets/forecasting.png" alt="Forecasting"/>
       <h3>Energy Forecasting</h3>
       <p>Time-series ML model using XGBoost to predict electricity usage.</p>
     </div>
 
-    <div class="project">
+    <div class="project" data-aos="fade-up" data-aos-delay="200">
+      <img src="assets/recommendation.png" alt="Recommendation"/>
       <h3>Recommendation System</h3>
       <p>NLP-based content recommender using cosine similarity and TF-IDF.</p>
     </div>
   </section>
 
-  <section class="contact">
+  <section id="contact" class="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:buddhamaneeshgupta@gmail.com">buddhamaneeshgupta@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank">linkedin.com/in/yourlinkedin</a></p>
+    <form action="https://formspree.io/f/mzbllwdo" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="_replyto" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
+
+  <script>
+    AOS.init();
+    const toggle = document.getElementById('theme-toggle');
+    toggle.onclick = () => document.body.classList.toggle('light-theme');
+  </script>
 </body>
 </html>
